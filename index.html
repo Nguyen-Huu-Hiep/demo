@@ -46,7 +46,7 @@
 
         <div id="slider">
             <div class="slider-banner">
-                <img alt="banner" class="slider-img" src="/w3_band/assets/img/slider/silder2.jpg">
+                <img alt="banner" class="slider-img" src="./assets/img/slider/silder2.jpg">
             </div>
             <div class="text-content">
                 <h2 class="text-heading">New York</h2>
@@ -69,15 +69,15 @@
                 <div class="members-list">
                     <div class="member-item">
                         <p class="member-name">Name</p>
-                        <img src="/w3_band/assets/img/band/member1.jpg" alt="Name" class="member-img">
+                        <img src="./assets/img/band/member1.jpg" alt="Name" class="member-img">
                     </div>
                     <div class="member-item">
                         <p class="member-name">Name</p>
-                        <img src="/w3_band/assets/img/band/member1.jpg" alt="Name" class="member-img">
+                        <img src="./assets/img/band/member1.jpg" alt="Name" class="member-img">
                     </div>
                     <div class="member-item">
                         <p class="member-name">Name</p>
-                        <img src="/w3_band/assets/img/band/member1.jpg" alt="Name" class="member-img">
+                        <img src="./assets/img/band/member1.jpg" alt="Name" class="member-img">
                     </div>
                 </div>
             </div>
@@ -98,36 +98,36 @@
                     <!-- Places -->
                     <div class="places-list">
                         <div class="place-item">
-                            <img src="/w3_band/assets/img/places/newyork.jpg" alt="New york" class="place-img">
+                            <img src="./assets/img/places/newyork.jpg" alt="New york" class="place-img">
                             <div class="place-body">
                                 <div class="place-body-content">
                                     <h3 class="place-heading">New York</h3>
                                     <p class="place-time">Fri 27 Nov 2016</p>
                                     <p class="place-desc">Praesent tincidunt sed tellus hi come on my sunshine</p>
                                 </div>
-                                <button class="btn">Buy Tickets</button>
+                                <button class="btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
-                            <img src="/w3_band/assets/img/places/paris.jpg" alt="New york" class="place-img">
+                            <img src="./assets/img/places/paris.jpg" alt="New york" class="place-img">
                             <div class="place-body">
                                 <div class="place-body-content">
                                     <h3 class="place-heading">New York</h3>
                                     <p class="place-time">Fri 27 Nov 2016</p>
                                     <p class="place-desc">Praesent tincidunt sed tellus</p>
                                 </div>
-                                <button class="btn">Buy Tickets</button>
+                                <button class="btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
-                            <img src="/w3_band/assets/img/places/place3.jpg" alt="New york" class="place-img">
+                            <img src="./assets/img/places/place3.jpg" alt="New york" class="place-img">
                             <div class="place-body">
                                 <div class="place-body-content">
                                     <h3 class="place-heading">New York</h3>
                                     <p class="place-time">Fri 27 Nov 2016</p>
                                     <p class="place-desc">Praesent tincidunt sed tellus</p>
                                 </div>
-                                <button class="btn">Buy Tickets</button>
+                                <button class="btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
             </div>
             <!--End Contact section  -->
             <div class="map-section">
-                <img src="/w3_band/assets/img/map.jpg" alt="" class="map-section-img">
+                <img src="./assets/img/map.jpg" alt="" class="map-section-img">
             </div>
 
         </div>
@@ -271,6 +271,33 @@
 
     </script>
 
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket');
+        const modal = document.querySelector('.modal');
+        const modalContainer = document.querySelector('.modal-container')
+        const modalClose = document.querySelector('.modal-close');
+
+        function showBuytickets() {
+            modal.classList.add('open')
+        }
+
+        function hideBuytickets() {
+            modal.classList.remove('open')
+        }
+
+
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuytickets)
+        }
+
+        
+        modalClose.addEventListener('click', hideBuytickets)
+
+        modalContainer.addEventListener('click', function (event) {
+            event.stopPropagation()
+        })
+        
+    </script>
 </body>
 
 </html>
